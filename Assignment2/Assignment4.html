@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Assignment 4</title>
+</head>
+<style>
+    div.gallery {
+      margin: 5px;
+      float: left;
+      width: 180px;
+    }
+    
+    div.gallery:hover {
+      border: 1px solid #777;
+    }
+    
+    div.gallery img {
+      width: 100%;
+      height: auto;
+    }
+    
+    div.desc {
+      padding: 15px;
+      text-align: center;
+    }
+    img {
+  border-radius: 8px;
+}
+ul {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+  width: 60px;
+  text-align: left;
+}
+
+li a {
+  display: block;
+  background-color: aquamarine;
+  padding: 0px;
+}
+table, th, td {
+  border: 1px solid;
+}table {
+  width: 50%;
+}
+
+th {
+  height: 30px;
+}
+tr:nth-child(even) {background-color: pink;}
+    </style>
+    
+<body>
+    <h1 style="color:green;text-align:center;font-size: 48px;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Welcome to My Webpage</h1>
+
+
+    <div class="gallery">
+        <a target="_blank" href="USMap2.jpg">
+          <img src="USMap2.jpg" alt="map" width="600px" height="400px">
+        </a>
+        <div class="desc">United States Map</div>
+      </div>
+
+
+      <ul>
+    <li><a href="default.asp">Home</a></li>
+    <li><a href="news.asp">News</a></li>
+    <li><a href="contact.asp">Contact</a></li>
+    <li><a href="about.asp">About</a></li>
+  </ul>
+
+<div>
+  <form action="/action_page.php">
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+    <label for="state">State</label>
+    <select id="state" name="state">
+      <option value="Ohio">Ohio</option>
+      <option value="Pennsylvania">Pennsylvania</option>
+      <option value="Michigan">Michigan</option>
+    </select>
+  
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
+<table>
+    <tr>
+      <th>State</th>
+      <th>State Bird</th>
+      <th>State Tree</th>
+    </tr>
+    <tr>
+      <td>Ohio</td>
+      <td>Cardinal</td>
+      <td>Buckeye</td>
+    </tr>
+    <tr>
+      <td>Pennsylvania</td>
+      <td>Ruffed Grouse</td>
+      <td>Eastern Hemlock</td>
+    </tr>
+    <tr>
+        <td>Michigan</td>
+        <td>American Robin</td>
+        <td>Eastern White Pine</td>
+      </tr>
+  </table>
+  
+
+</body>
+</html>
