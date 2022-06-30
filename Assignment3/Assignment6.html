@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Assignment 6</title>
+</head>
+<body>
+
+<h1 id="fullname">Hello World</h1>
+
+<input type="text" id="name"></input>
+<input type="button" onclick="printname()" value="Change Name"></input>
+
+
+<input type="text" id="price"></input>
+<input type="text" id="quantity"></input>
+<input type='button' id= box3 onclick="multiply()" value="Click to multiply"></input>
+
+
+<p id="total"></p>
+<br>
+
+<table id="totals"></table>
+
+<script>
+    function printname(){
+        console.log('Hello')
+        fullname=document.getElementById('name').value
+        document.getElementById('fullname').innerHTML="Hello" + fullname
+    }
+    function multiply(){
+        total=(document.getElementById('price').value)*(document.getElementById('quantity').value)
+        document.getElementById('total').innerHTML="Total: " + total
+        total=price+quantity
+        console.log("Total: " + total)
+    }
+   
+    
+ numbers=[0,1,2,3]
+ 
+    products=['dog','cat','fish']
+    prices=[3000,1000,50]
+    quantitys=[3,1,5]
+    
+    text=' <tr><th>Product Name</th><th>Price</th><th>Quantity</th><th>Total</th></tr>'
+    
+    for (let i = 0; i < products.length; i++) {
+        text=text+'<tr>'
+
+        total=prices[i]*quantitys[i]
+
+        text=text+'<td>'+ products[i]+ "</td>"
+        text=text+'<td>'+ prices[i]+ "</td>"
+        text=text+'<td>'+ quantitys[i]+ "</td>"
+        text=text+'<td>'+ total+ "</td>"
+    
+
+        text=text+'</tr>'
+
+        console.log(text)
+}
+    
+document.getElementById('totals').innerHTML=text
+
+
+</script>
+
+
+</body>
+</html>
