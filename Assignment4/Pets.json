@@ -1,0 +1,39 @@
+[
+    {
+        "Animal Type": "Dog",
+        "id":1,
+        "price": "1000",
+        "description": "four-legged, loyal friend",
+        "url": "dog.html" ,
+        "thumbnailUrl": "dogthumbnail.jpg"
+    },
+    {
+        "Animal Type": "Cat",
+        "id":2,
+        "price": "500",
+        "description": "four-legged, sassy companion",
+        "url": "cat.html" ,
+        "thumbnailUrl": "catthumbnail.jpg"
+    },{
+        "Animal Type": "Fish",
+        "id":3,
+        "price": "20",
+        "description": "colorful, water-dwelling friend",
+        "url": "fish.html" ,
+        "thumbnailUrl": "fishthumbnail.jpg"
+    },{
+        "Animal Type": "Hamster",
+        "id":4,
+        "price": "30",
+        "description": "small, fuzzy pocket-sized buddy",
+        "url": "hamster.html" ,
+        "thumbnailUrl": "hamsterthumbnail.jpg"
+    },{
+        "Animal Type": "Bird",
+        "id":5,
+        "price": "60",
+        "description": "talkative, feathery friend",
+        "url": "bird.html" ,
+        "thumbnailUrl": "birdthumbnail.jpg"
+    },
+]
