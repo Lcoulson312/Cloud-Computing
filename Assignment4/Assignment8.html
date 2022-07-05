@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Assignment 8:Pets</title>
+</head>
+<body>
+    <table id="totals"></table>
+<script>
+
+    
+pets=`[
+    {
+        "animal_type": "Dog",
+        "id":1,
+        "price": "1000",
+        "description": "four-legged, loyal friend",
+        "url": "dog.html" ,
+        "thumbnailUrl": "dogthumbnail.jpg"
+    },
+    {
+        "animal_type": "Cat",
+        "id":2,
+        "price": "500",
+        "description": "four-legged, sassy companion",
+        "url": "cat.html" ,
+        "thumbnailUrl": "catthumbnail.jpg"
+    },
+    {
+        "animal_type": "Fish",
+        "id":3,
+        "price": "20",
+        "description": "colorful, water-dwelling friend",
+        "url": "fish.html" ,
+        "thumbnailUrl": "fishthumbnail.jpg"
+    },
+    {
+        "animal_type": "Hamster",
+        "id":4,
+        "price": "30",
+        "description": "small, fuzzy pocket-sized buddy",
+        "url": "hamster.html" ,
+        "thumbnailUrl": "hamsterthumbnail.jpg"
+    },
+    {
+        "animal_type": "Bird",
+        "id":5,
+        "price": "60",
+        "description": "talkative, feathery friend",
+        "url": "bird.html" ,
+        "thumbnailUrl": "birdthumbnail.jpg"
+    }
+]`
+
+
+var obj=JSON.parse(pets);
+
+quantitys=[2,5,7,3,4]
+
+text="<tr><th>Animal Type</th><th>Price</th><th>Quantity</th><th>Total</th></tr>";
+for (let i = 0; i < obj.length; i++) {
+        text=text+"<tr>"
+
+        if(obj[i].price>0){
+            price=obj[i].price
+        }else{
+            price=0
+        }
+
+        if(quantitys[i]>0){
+            quantity=quantitys[i]
+        }else{
+            quantity=0
+        }
+        
+
+        total=price*quantity
+
+        text=text+"<td>"+ obj[i].animal_type+ "</td>"
+        text=text+"<td>"+ price+ "</td>"
+        text=text+"<td>"+ quantity+"</td>"
+        text=text+"<td>"+ total+ "</td>"
+        text=text+"<td>"+ obj[i].description+ "</td>"
+    
+
+        text=text+"</tr>"
+
+        console.log(text)
+    }
+    
+    document.getElementById('totals').innerHTML=text
+
+</script>
+
+
+</body>
+</html>
