@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Welcome!</title>
+<style>
+    div.gallery {
+      margin: 5px;
+      float: middle;
+      width: 180px;
+    }
+    
+    div.gallery:hover {
+      border: 1px solid #777;
+    }
+    
+    div.gallery img {
+      width: 100%;
+      height: auto;
+    }
+    
+    div.desc {
+      padding: 15px;
+      text-align: center;
+    }
+    img {
+  border-radius: 8px;
+}
+ul {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+  width: 60px;
+  text-align: left;
+}
+
+li a {
+  display: block;
+  background-color: aquamarine;
+  
+}
+table, th, td {
+  border: 1px solid;
+}table {
+  width: 50%;
+}
+
+th {
+  height: 30px;
+}
+tr:nth-child(even) {background-color: pink;}
+    </style>
+
+
+</head>
+<body>
+
+<h1>Sunshine Pet Adoption</h1>
+
+<div class="gallery">
+    <a target="_blank" href="SunshineLogo.jpg.jpg">
+      <img src="SunshineLogo.jpg" alt="map" width="200px" height="200px">
+    </a>
+  </div>
+
+<ul>
+  <li><a href="default.asp">Home</a></li>
+  <li><a href="news.asp">News</a></li>
+  <li><a href="contact.asp">Contact</a></li>
+  <li><a href="about.asp">About</a></li>
+</ul>
+<p>Welcome to Sunshine! We are the #1 pet adoption agency East of the Mississippi! We have all types of animals waiting for you take them home!</p>
+<p>The follwing table will give you a brief outline of the animals currently in our care.</p>
+
+<table id="totals"></table>
+
+
+<form>
+  <label for="fname">First name:</label><br>
+  <input type="text" id="fname" name="fname"><br>
+  <label for="lname">Last name:</label><br>
+  <input type="text" id="lname" name="lname"><br>
+  <label for="inquiry">Animal Inquiry:</label><br>
+  <input type="text" id="inquiry" name="inquiry">
+</form>
+
+<script>
+
+fetch("https://raw.githubusercontent.com/Lcoulson312/Cloud-Computing/main/Assignment4/Pets.json")
+        .then(response=>response.json())
+        .then(data=>processData(data))
+
+    function processData(data){
+        var obj=data;
+
+        quantitys=[2,5,7,3,4]
+
+text="<tr><th>Animal Type</th><th>Price</th><th>Quantity</th><th>Total</th><th>Description</th></tr>";
+for (let i = 0; i < obj.length; i++) {
+        text=text+"<tr>"
+
+        if(obj[i].price>0){
+            price=obj[i].price
+        }else{
+            price=0
+        }
+
+        if(quantitys[i]>0){
+            quantity=quantitys[i]
+        }else{
+            quantity=0
+        }
+        
+
+        total=price*quantity
+
+        text=text+"<td>"+ "<a href='animals/"+obj[i].url+ "'>"+obj[i].animal_type+"</a>"+"</td>"
+        text=text+"<td>"+ price+ "</td>"
+        text=text+"<td>"+ quantity+"</td>"
+        text=text+"<td>"+ total+ "</td>"
+        text=text+"<td>"+ obj[i].description+ "</td>"
+    
+
+        text=text+"</tr>"
+
+        console.log(text)
+    }
+
+    document.getElementById('totals').innerHTML=text
+    } 
+</script>
+</body>
+</html>
